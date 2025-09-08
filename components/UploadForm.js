@@ -50,7 +50,7 @@ export default function UploadForm({ onSuccess }) {
 
       console.log('Sending request to /api/upload...');
 
-      const response = await fetch('/api/upload', {
+      const response = await fetch('/pdf/api/upload', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

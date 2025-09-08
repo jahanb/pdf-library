@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
   const checkAuth = async (authToken) => {
     try {
       console.log('Checking auth with token...');
-      const response = await fetch('/api/auth/me', {
+      const response = await fetch('/pdf/api/auth/me', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${authToken}`,
@@ -69,7 +69,7 @@ export function AuthProvider({ children }) {
   const login = async (username, password) => {
     try {
       console.log('Attempting login for:', username);
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch('/pdf/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export function AuthProvider({ children }) {
   const register = async (userData) => {
     try {
       console.log('Attempting registration for:', userData.username);
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch('/pdf/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

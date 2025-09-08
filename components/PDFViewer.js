@@ -16,7 +16,7 @@ export default function PDFViewer({ book }) {
   useEffect(() => {
     if (book && token) {
       // Create URL with token as query parameter for iframe
-      const authenticatedUrl = `/api/pdf/${book.id}?token=${encodeURIComponent(token)}`;
+      const authenticatedUrl = `/pdf/api/pdf/${book.id}?token=${encodeURIComponent(token)}`;
       setPdfUrl(authenticatedUrl);
       setLoading(true);
       setError(false);
@@ -47,7 +47,7 @@ export default function PDFViewer({ book }) {
     }
 
     try {
-      const response = await fetch(`/api/pdf/${book.id}`, {
+      const response = await fetch(`/pdf/api/pdf/${book.id}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -81,7 +81,7 @@ export default function PDFViewer({ book }) {
     }
 
     try {
-      const response = await fetch(`/api/pdf/${book.id}`, {
+      const response = await fetch(`/pdf/api/pdf/${book.id}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
